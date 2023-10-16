@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "3451b4bb-05f6-4e7b-8e4b-054cde78e24b",
+		"name": "photoEditor-Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16570847"
+	},
+	"item": [
+		{
+			"name": "crop image uploadded file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/005.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/crop?w=50&h=50&x=20&y=30",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"crop"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "50",
+							"description": "width // required"
+						},
+						{
+							"key": "h",
+							"value": "50",
+							"description": "height // required"
+						},
+						{
+							"key": "x",
+							"value": "20",
+							"description": "x coordonaite for top-left corner //optional"
+						},
+						{
+							"key": "y",
+							"value": "30",
+							"description": "y coordonaite for top-left corner //optional"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crop image url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+							"description": "required // could be uploaded file or url",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/crop?w=100&h=100",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"crop"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "100",
+							"description": "width // required"
+						},
+						{
+							"key": "h",
+							"value": "100",
+							"description": "height // required"
+						},
+						{
+							"key": "x",
+							"value": null,
+							"description": "x coordonaite for top-left corner //optional",
+							"disabled": true
+						},
+						{
+							"key": "y",
+							"value": null,
+							"description": "x coordonaite for top-left corner //optional",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resize image uploaded file px",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/003.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/resize?w=50",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"resize"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "50",
+							"description": "width // required // digits or percentage"
+						},
+						{
+							"key": "h",
+							"value": null,
+							"description": "hieght // optional // digits or percentage",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contrast image uploaded file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/005.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/contrast?level=50",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"contrast"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "50",
+							"description": "level to contrast //required // digits between -100,+100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change image brightness",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/006.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/bright?level=-50",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"bright"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "-50",
+							"description": "level to brightness//required // digits between -100,+100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sharpen image with an amount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/001.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/sharp?amount=50",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"sharp"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "50",
+							"description": "amount // optional but must be digit between 0 ,100 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rotate image by angle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/004.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/rotate?angle=100&bgcolor=rgb(0,0,0)",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"rotate"
+					],
+					"query": [
+						{
+							"key": "angle",
+							"value": "100",
+							"description": "angle // required and must be digit between -360 ,+360"
+						},
+						{
+							"key": "bgcolor",
+							"value": "rgb(0,0,0)",
+							"description": " bgcolor is optional but must be rgb color format"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "flip image uploaded file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/006.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/flip?mode=v",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"flip"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "v",
+							"description": "mode // optional // value must be v or h"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invert image color",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/005.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/invertcolor",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"invertcolor"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://photoeditor-sk.herokuapp.com/api/photo",
+			"type": "string"
+		}
+	]
+}
